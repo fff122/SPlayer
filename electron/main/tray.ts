@@ -71,10 +71,10 @@ const createTrayMenu = (
       type: "separator",
     },
     {
-      id: "toogleLikeSong",
+      id: "toggleLikeSong",
       label: likeSong ? "从我喜欢中移除" : "添加到我喜欢",
       icon: showIcon(likeSong ? "like" : "unlike"),
-      click: () => win.webContents.send("toogleLikeSong"),
+      click: () => win.webContents.send("toggleLikeSong"),
     },
     {
       id: "changeMode",
@@ -133,17 +133,17 @@ const createTrayMenu = (
       type: "separator",
     },
     {
-      id: "toogleDesktopLyric",
+      id: "toggleDesktopLyric",
       label: `${desktopLyricShow ? "关闭" : "开启"}桌面歌词`,
       icon: showIcon("lyric"),
-      click: () => win.webContents.send("toogleDesktopLyric"),
+      click: () => win.webContents.send("toggleDesktopLyric"),
     },
     {
-      id: "toogleDesktopLyricLock",
+      id: "toggleDesktopLyricLock",
       label: `${desktopLyricLock ? "解锁" : "锁定"}桌面歌词`,
       icon: showIcon(desktopLyricLock ? "lock" : "unlock"),
       visible: desktopLyricShow,
-      click: () => lyricWin.webContents.send("toogleDesktopLyricLock", !desktopLyricLock),
+      click: () => lyricWin.webContents.send("toggleDesktopLyricLock", !desktopLyricLock),
     },
     {
       type: "separator",

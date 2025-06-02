@@ -13,7 +13,6 @@ export default defineConfig(({ command, mode }) => {
   const getEnv = (name: keyof MainEnv): string => {
     return loadEnv(mode, process.cwd())[name];
   };
-  console.log(command);
   // 获取端口
   const webPort: number = Number(getEnv("VITE_WEB_PORT") || 14558);
   const servePort: number = Number(getEnv("VITE_SERVER_PORT") || 25884);

@@ -81,7 +81,6 @@ const keyDownEvent = debounce((event: KeyboardEvent) => {
     );
     if (mainKey !== key) match = false;
     if (match && shortcutKey) {
-      console.log(shortcutKey, `快捷键触发: ${shortcut.name}`);
       switch (shortcutKey) {
         case "playOrPause":
           player.playOrPause();
@@ -98,7 +97,7 @@ const keyDownEvent = debounce((event: KeyboardEvent) => {
         case "volumeDown":
           player.setVolume("down");
           break;
-        case "toogleDesktopLyric":
+        case "toggleDesktopLyric":
           player.toggleDesktopLyric();
           break;
         default:

@@ -178,7 +178,7 @@ const playList = debounce(
       const list = await getListData(item.id);
       player.updatePlayList(list, undefined, item.id);
     } catch (error) {
-      console.log("Error to play: ", error);
+      console.error("Error to play: ", error);
     } finally {
       item.loading = false;
     }

@@ -613,7 +613,7 @@ const initLyricIpcMain = (
   });
 
   // 锁定/解锁桌面歌词
-  ipcMain.on("toogleDesktopLyricLock", (_, isLock: boolean) => {
+  ipcMain.on("toggleDesktopLyricLock", (_, isLock: boolean) => {
     if (!lyricWin) return;
     // 是否穿透
     if (isLock) {
@@ -671,7 +671,7 @@ const initTrayIpcMain = (
   });
 
   // 锁定/解锁桌面歌词
-  ipcMain.on("toogleDesktopLyricLock", (_, isLock: boolean) => {
+  ipcMain.on("toggleDesktopLyricLock", (_, isLock: boolean) => {
     tray?.setDesktopLyricLock(isLock);
   });
 };

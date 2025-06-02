@@ -176,7 +176,6 @@ const playerLeave = () => {
 };
 
 onMounted(() => {
-  console.log("播放器开启");
   statusStore.fullPlayerActive = true;
   // 音乐频谱
   if (settingStore.showSpectrums) player.initSpectrumData();
@@ -187,7 +186,6 @@ onMounted(() => {
 });
 
 onBeforeUnmount(() => {
-  console.log("离开播放器");
   if (isElectron) window.electron.ipcRenderer.send("prevent-sleep", false);
 });
 </script>

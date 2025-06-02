@@ -52,7 +52,6 @@ const login = async () => {
     return;
   }
   cookie.value = cookie.value.trim();
-  console.log(cookie.value.endsWith(";"));
 
   // 是否为有效 Cookie
   if (!cookie.value.includes("MUSIC_U") || !cookie.value.endsWith(";")) {

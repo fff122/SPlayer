@@ -268,7 +268,6 @@ onMounted(() => {
 });
 
 onBeforeUnmount(() => {
-  console.log("离开歌词");
   pauseSeek();
 });
 </script>

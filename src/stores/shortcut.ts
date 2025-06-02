@@ -17,7 +17,7 @@ interface ShortcutStore {
     playNext: ShortcutType;
     volumeUp: ShortcutType;
     volumeDown: ShortcutType;
-    toogleDesktopLyric: ShortcutType;
+    toggleDesktopLyric: ShortcutType;
   };
 }
 
@@ -56,7 +56,7 @@ export const useShortcutStore = defineStore("shortcut", {
         globalShortcut: "CmdOrCtrl+Shift+Down",
       },
       // 桌面歌词
-      toogleDesktopLyric: {
+      toggleDesktopLyric: {
         name: "桌面歌词",
         shortcut: "CmdOrCtrl+KeyD",
         globalShortcut: "CmdOrCtrl+Shift+D",
@@ -72,7 +72,7 @@ export const useShortcutStore = defineStore("shortcut", {
         "register-all-shortcut",
         cloneDeep(this.shortcutList),
       );
-      console.log(result);
+      // No additional handling required
       return result;
     },
   },
