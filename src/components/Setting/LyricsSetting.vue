@@ -365,7 +365,6 @@ const getDesktopLyricConfig = async () => {
 const saveDesktopLyricConfig = () => {
   try {
     if (!isElectron) return;
-    console.log(cloneDeep(desktopLyricConfig));
     window.electron.ipcRenderer.send(
       "set-desktop-lyric-option",
       cloneDeep(desktopLyricConfig),
@@ -385,7 +384,6 @@ const restoreDesktopLyricConfig = () => {
     if (!isElectron) return;
     window.electron.ipcRenderer.send("set-desktop-lyric-option", defaultDesktopLyricConfig, true);
     window.$message.success("桌面歌词配置已恢复默认");
-    console.log(defaultDesktopLyricConfig, desktopLyricConfig);
   } catch (error) {
     console.error("Failed to save options:", error);
     window.$message.error("桌面歌词配置恢复默认失败");

@@ -54,7 +54,6 @@ export const setColorSchemes = (
       mode === "dark" ? { r: 16, g: 16, b: 20 } : { r: 239, g: 239, b: 239 };
     colorModeData["surface-container"] =
       mode === "dark" ? { r: 24, g: 24, b: 28 } : { r: 255, g: 255, b: 255 };
-    console.log(colorModeData);
   }
   // 遍历颜色并修改
   for (const key in colorModeData) {
@@ -99,7 +98,6 @@ export const getCoverColorData = (dom: HTMLImageElement) => {
   const mostFrequentColors = sortedQuantizedColors.slice(0, 5).map((x) => argbToRgb(x[0]));
   // 如果最频繁的颜色差异很小，使用灰色强调色
   if (mostFrequentColors.every((x) => Math.max(...x) - Math.min(...x) < 5)) {
-    console.log("该封面颜色单调");
     return {
       main: { r: 239, g: 239, b: 239 },
       light: {

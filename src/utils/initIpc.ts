@@ -31,13 +31,13 @@ const initIpc = () => {
     // 播放模式切换
     window.electron.ipcRenderer.on("changeMode", (_, mode) => player.togglePlayMode(mode));
     // 喜欢歌曲
-    window.electron.ipcRenderer.on("toogleLikeSong", async () => {
+    window.electron.ipcRenderer.on("toggleLikeSong", async () => {
       const dataStore = useDataStore();
       const musicStore = useMusicStore();
       await toLikeSong(musicStore.playSong, !dataStore.isLikeSong(musicStore.playSong.id));
     });
     // 桌面歌词开关
-    window.electron.ipcRenderer.on("toogleDesktopLyric", () => player.toggleDesktopLyric());
+    window.electron.ipcRenderer.on("toggleDesktopLyric", () => player.toggleDesktopLyric());
     window.electron.ipcRenderer.on("closeDesktopLyric", () => player.toggleDesktopLyric());
     // 无更新
     window.electron.ipcRenderer.on("update-not-available", () => {
@@ -56,7 +56,7 @@ const initIpc = () => {
       window.$message.error("更新过程出现错误");
     });
   } catch (error) {
-    console.log(error);
+    console.error(error);
   }
 };
 

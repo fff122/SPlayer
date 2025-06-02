@@ -356,12 +356,12 @@ const resetPlaylistData = (getList: boolean) => {
 
 // 获取本地歌单
 const handleLocalPlaylist = (id: number) => {
-  console.log(id);
+  // TODO: implement local playlist fetch logic
 };
 
 // 获取在线歌单
 const handleOnlinePlaylist = async (id: number, getList: boolean, refresh: boolean) => {
-  console.log(id, getList, refresh);
+
 
   // 获取歌单详情
   const detail = await playlistDetail(id);

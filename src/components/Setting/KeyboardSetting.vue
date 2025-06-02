@@ -185,7 +185,6 @@ const inputKeyDown = async (e: KeyboardEvent) => {
   const shortcut = [isCtrl && "CmdOrCtrl", isShift && "Shift", isAlt && "Alt", keyCode]
     .filter(Boolean)
     .join("+");
-  console.log(keyCode, e, [isCtrl && "CmdOrCtrl", isShift && "Shift", isAlt && "Alt", keyCode]);
   // 更改快捷键
   if (isRepeat(shortcut)) {
     window.$message.warning("快捷键设置冲突");

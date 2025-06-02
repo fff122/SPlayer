@@ -96,7 +96,6 @@ const getSongDetail = async (): Promise<any> => {
   songData.value = formatSongsList(result.songs)[0];
   // 获取音质信息
   const quality = await songQuality(props.id);
-  console.log(quality);
   // 获取下载信息
   const level = getLevelsUpTo(result?.privileges?.[0]?.downloadMaxBrLevel);
   if (!level) return window.$message.error("获取下载信息失败，请重试");
